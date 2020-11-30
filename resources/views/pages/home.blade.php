@@ -2,7 +2,7 @@
 @section('title', 'Beranda')
 
 @section('content')
-    <!-- Slider Start -->
+    {{-- <!-- Slider Start -->
     <div class="top-shadow"></div>
 
     <section class="home-slider owl-carousel">
@@ -52,7 +52,7 @@
       </div>
     </section>
     <!-- Panel End -->
-    
+
     <!-- visi & misi section -->
     <section class="section">
       <div class="container">
@@ -64,10 +64,10 @@
                   <h3 class="heading">Visi</h3>
                     <p>Terwujudnya partisipasi penuh dan kesamaan kesempatan penyandang disabilitas dalam segala aspek Kehidupan dan Penghidupan</p>
                 </div>
-              </div>  
+              </div>
             </div>
           </div>
-          
+
           <div class="col-md-8 col-lg-6 element-animate">
             <div class="media block-6 d-block text-center">
               <div class="icon mb-3"><span class="ion-leaf text-primary"></span>
@@ -82,14 +82,14 @@
                       <li align="justify">Melakukan kampanye kepedulian dan kesadaran publik sebagai media sosialisasi dan informasi tentang penyandang disabilitas kepada masyarakat.</li>
                     </ol>
                 </div>
-              </div> 
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- END section -->
-    
+
     <!-- foto section -->
     <section class="section border-t pb-0">
       <div class="container">
@@ -123,7 +123,7 @@
             </a>
           </div>
         </div>
-        
+
       </div>
     </section>
     <!-- END section -->
@@ -138,35 +138,6 @@
         </div>
 
         <div class="row">
-          
-          <div class="col-md-4">
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="single.html" class="mr-5"><img src="{{url('ppdi-frontend/images/img_2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h6 class="mt-2 text-black"><a href="single.html">Separated they live in Bookmarksgrove right</a></h6>
-                <p><a href="single.html" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="single.html" class="mr-5"><img src="{{url('ppdi-frontend/images/img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h6 class="mt-2 text-black"><a href="single.html">Separated they live in Bookmarksgrove right</a></h6>
-                <p><a href="single.html" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="single.html" class="mr-5"><img src="{{url('ppdi-frontend/images/img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h6 class="mt-2 text-black"><a href="single.html">Separated they live in Bookmarksgrove right</a></h6>
-                <p><a href="single.html" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-          </div>
 
           <div class="col-md-4">
             <div class="media mb-4 d-md-flex d-block element-animate">
@@ -225,7 +196,36 @@
               </div>
             </div>
           </div>
-          
+
+          <div class="col-md-4">
+            <div class="media mb-4 d-md-flex d-block element-animate">
+              <a href="single.html" class="mr-5"><img src="{{url('ppdi-frontend/images/img_2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+              <div class="media-body">
+                <span class="post-meta">Feb 26th, 2018</span>
+                <h6 class="mt-2 text-black"><a href="single.html">Separated they live in Bookmarksgrove right</a></h6>
+                <p><a href="single.html" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
+              </div>
+            </div>
+
+            <div class="media mb-4 d-md-flex d-block element-animate">
+              <a href="single.html" class="mr-5"><img src="{{url('ppdi-frontend/images/img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+              <div class="media-body">
+                <span class="post-meta">Feb 26th, 2018</span>
+                <h6 class="mt-2 text-black"><a href="single.html">Separated they live in Bookmarksgrove right</a></h6>
+                <p><a href="single.html" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
+              </div>
+            </div>
+
+            <div class="media mb-4 d-md-flex d-block element-animate">
+              <a href="single.html" class="mr-5"><img src="{{url('ppdi-frontend/images/img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+              <div class="media-body">
+                <span class="post-meta">Feb 26th, 2018</span>
+                <h6 class="mt-2 text-black"><a href="single.html">Separated they live in Bookmarksgrove right</a></h6>
+                <p><a href="single.html" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -238,5 +238,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
+
+    <h1>Kepin jembud</h1>
     @endsection
