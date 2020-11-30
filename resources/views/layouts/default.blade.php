@@ -17,18 +17,18 @@
 
 <body>
 
-    {{-- @include('includes.preloader') --}}
+    @include('includes.preloader')
 
-    {{-- @include('includes.header') --}}
+    @include('includes.header')
 
     @yield('content')
 
-    {{-- @include('includes.footer') --}}
+    @include('includes.footer')
 
 
-    {{-- @stack('before-script')
+    @stack('before-script')
     @include('includes.script')
-    @stack('after-script') --}}
+    @stack('after-script')
 </body>
 
 </html>

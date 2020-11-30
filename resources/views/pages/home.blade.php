@@ -2,7 +2,7 @@
 @section('title', 'Beranda')
 
 @section('content')
-    {{-- <!-- Slider Start -->
+    <!-- Slider Start -->
     <div class="top-shadow"></div>
 
     <section class="home-slider owl-carousel">
@@ -238,6 +238,5 @@
           </div>
         </div>
       </div>
-    </section> --}}
-    <h1>Kontol lu pin</h1>
+    </section>
     @endsection
