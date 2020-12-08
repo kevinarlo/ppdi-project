@@ -1,7 +1,5 @@
 @extends('layouts.admin')
-@section('title')
-Admin
-@endsection
+@section('title', 'Admin')
 
 @section('content')
                 <!-- Begin Page Content -->
