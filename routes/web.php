@@ -45,4 +45,13 @@ Route::prefix('admin')
         ->group(function(){
             Route::get('/', 'DashboardController@index')
                 ->name('dashboard');
+            Route::get('/datafoto', 'FotoController@index')
+                ->name('datafoto');
+            Route::get('/datavideo', 'VideoController@index')
+                ->name('datavideo');
+            Route::get('/databerita', 'BeritaController@index')
+                ->name('databerita');
+            Route::get('/datapesan', 'PesanController@index')
+                ->name('datapesan');
         });
+
