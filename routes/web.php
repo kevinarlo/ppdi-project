@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Frontend
+
 Route::get('/', 'HomeController@index')
 ->name('beranda');
 
@@ -36,3 +38,11 @@ Route::get('/blog', 'BlogController@index')
 
 Route::get('/contact', 'ContactController@index')
 ->name('contact');
+
+// Backend
+Route::prefix('admin')
+        ->namespace('admin')
+        ->group(function(){
+            Route::get('/', 'DashboardController@index')
+                ->name('dashboard');
+        });
