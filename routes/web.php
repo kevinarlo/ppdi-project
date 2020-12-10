@@ -41,6 +41,7 @@ Route::get('/contact', 'ContactController@index')
 
 // Backend
 Route::prefix('admin')
+        ->middleware('auth')
         ->namespace('admin')
         ->group(function(){
             Route::get('/', 'DashboardController@index')
