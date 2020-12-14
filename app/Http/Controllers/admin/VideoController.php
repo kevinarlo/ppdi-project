@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Video;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class VideoController extends Controller
 {
@@ -44,6 +45,8 @@ class VideoController extends Controller
         $data['video'] = $request->file('video')->store('assets/video', 'public');
 
         Video::create($data);
+
+        Alert::success('Selamat', 'Data Berhasil Ditambahkan');
 
         return redirect()->route('video.index');
     }
@@ -89,6 +92,8 @@ class VideoController extends Controller
 
         $item->update($data);
 
+        Alert::success('Selamat', 'Data Berhasil Ditambahkan');
+
         return redirect()->route('video.index');
     }
 
@@ -103,6 +108,8 @@ class VideoController extends Controller
         $item = Video::findOrFail($id);
 
         $item->delete();
+
+        Alert::success('Selamat', 'Data Berhasil Dihapus');
 
         return redirect()->route('video.index');
     }

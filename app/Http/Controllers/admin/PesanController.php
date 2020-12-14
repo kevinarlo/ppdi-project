@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Message;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PesanController extends Controller
 {
@@ -87,6 +88,8 @@ class PesanController extends Controller
         $item = Message::findOrFail($id);
 
         $item->delete();
+
+        Alert::success('Selamat', 'Data Berhasil Dihapus');
 
         return redirect()->route('pesan.index');
     }

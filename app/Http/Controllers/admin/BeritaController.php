@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BeritaController extends Controller
 {
@@ -43,11 +44,11 @@ class BeritaController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
-        $data['photo'] = $request->file('photo')->store(
-            'assets/post', 'public'
-        );
+        $data['photo'] = $request->file('photo')->store('assets/post', 'public');
 
         Post::create($data);
+
+        Alert::success('Selamat', 'Data Berhasil Ditambahkan');
 
         return redirect()->route('berita.index');
     }
@@ -94,6 +95,8 @@ class BeritaController extends Controller
 
         $item->update($data);
 
+        Alert::info('Selamat', 'Data Berhasil Diedit');
+
         return redirect()->route('berita.index');
     }
 
@@ -108,6 +111,8 @@ class BeritaController extends Controller
         $item = Post::findOrFail($id);
 
         $item->delete();
+
+        Alert::success('Selamat', 'Data Berhasil Dihapus');
 
         return redirect()->route('berita.index');
     }

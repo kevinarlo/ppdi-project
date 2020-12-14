@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Photo;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FotoController extends Controller
 {
@@ -44,6 +45,8 @@ class FotoController extends Controller
         $data['foto'] = $request->file('foto')->store('assets/foto', 'public');
 
         Photo::create($data);
+
+        Alert::success('Selamat', 'Data Berhasil Ditambahkan');
 
         return redirect()->route('foto.index');
     }
@@ -89,6 +92,8 @@ class FotoController extends Controller
 
         $item->update($data);
 
+        Alert::success('Selamat', 'Data Berhasil Ditambahkan');
+
         return redirect()->route('foto.index');
     }
 
@@ -103,6 +108,8 @@ class FotoController extends Controller
         $item = Photo::findOrFail($id);
 
         $item->delete();
+
+        Alert::success('Selamat', 'Data Berhasil Dihapus');
 
         return redirect()->route('foto.index');
     }
