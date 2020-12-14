@@ -14,7 +14,7 @@
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('datafoto') }}">
+    <a class="nav-link" href="{{ route('foto.index') }}">
         <i class="fas fa-fw fa-user"></i>
         <span>Foto</span>
     </a>
@@ -22,7 +22,7 @@
 
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('datavideo') }}">
+    <a class="nav-link" href="{{ route('video.index') }}">
         <i class="fas fa-fw fa-user"></i>
         <span>Video</span>
     </a>

@@ -33,61 +33,25 @@
 
       <div class="container">
         <div class="row text-center text-lg-left">
+          @foreach ($items as $gallery)
           <div class="col-lg-3 col-md-4 col-6">
-            <a href="{{('ppdi-frontend/images/img_1.jpg')}}" class="link-thumbnail">
+            <a href="{{ Storage::url($gallery->foto) }}" class="link-thumbnail">
               <span class="ion-eye icon"></span>
-              <img src="{{('ppdi-frontend/images/img_1.jpg')}}" class="card-img-top" alt="">
+              <img src="{{ Storage::url($gallery->foto) }}" class="card-img-top" alt="">
             </a>
           </div>
+          @endforeach
+        </div>
 
-          <div class="col-lg-3 col-md-4 col-6">
-            <a href="{{('ppdi-frontend/images/img_1.jpg')}}" class="link-thumbnail">
-              <span class="ion-eye icon"></span>
-              <img src="{{('ppdi-frontend/images/img_1.jpg')}}" class="card-img-top" alt="">
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <a href="{{('ppdi-frontend/images/img_1.jpg')}}" class="link-thumbnail">
-              <span class="ion-eye icon"></span>
-              <img src="{{('ppdi-frontend/images/img_1.jpg')}}" class="card-img-top" alt="">
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <a href="{{('ppdi-frontend/images/img_1.jpg')}}" class="link-thumbnail">
-              <span class="ion-eye icon"></span>
-              <img src="{{('ppdi-frontend/images/img_1.jpg')}}" class="card-img-top" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 mt-4">
-            <a href="{{('ppdi-frontend/images/img_1.jpg')}}" class="link-thumbnail">
-              <span class="ion-eye icon"></span>
-              <img src="{{('ppdi-frontend/images/img_1.jpg')}}" class="card-img-top" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 mt-4">
-            <a href="{{('ppdi-frontend/images/img_1.jpg')}}" class="link-thumbnail">
-              <span class="ion-eye icon"></span>
-              <img src="{{('ppdi-frontend/images/img_1.jpg')}}" class="card-img-top" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 mt-4">
-            <a href="{{('ppdi-frontend/images/img_1.jpg')}}" class="link-thumbnail">
-              <span class="ion-eye icon"></span>
-              <img src="{{('ppdi-frontend/images/img_1.jpg')}}" class="card-img-top" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 mt-4">
-            <a href="{{('ppdi-frontend/images/img_1.jpg')}}" class="link-thumbnail">
-              <span class="ion-eye icon"></span>
-              <img src="{{('ppdi-frontend/images/img_1.jpg')}}" class="card-img-top" alt="">
-            </a>
-          </div>
+        <!-- Pagination -->
+        <div class="mt-5">
+          <nav>
+              <ul class="pagination">
+                  <li class="page-item">
+                      {{ $items->links('pagination::bootstrap-4') }}
+                  </li>
+              </ul>
+          </nav>
         </div>
       </div>
     </section>

@@ -33,37 +33,24 @@
 
       <div class="container">
         <div class="row text-center text-lg-left">
+          @foreach ($items as $gallery)
           <div class="col-lg-3 col-md-4 col-6">
-              <video src="{{('ppdi-frontend/images/angkatberat1.mp4')}}" class="card-img-top" alt="">
+            <video width="270" controls>
+              <source src="{{ Storage::url($gallery->video) }}" type="video/mp4" alt="">
+            </video>
           </div>
+          @endforeach
+        </div>
 
-          <div class="col-lg-3 col-md-4 col-6">
-            <video src="{{('ppdi-frontend/images/angkatberat1.mp4')}}" class="card-img-top" alt="">
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <video src="{{('ppdi-frontend/images/angkatberat1.mp4')}}" class="card-img-top" alt="">
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <video src="{{('ppdi-frontend/images/angkatberat1.mp4')}}" class="card-img-top" alt="">
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <video src="{{('ppdi-frontend/images/angkatberat1.mp4')}}" class="card-img-top" alt="">
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <video src="{{('ppdi-frontend/images/angkatberat1.mp4')}}" class="card-img-top" alt="">
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <video src="{{('ppdi-frontend/images/angkatberat1.mp4')}}" class="card-img-top" alt="">
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <video src="{{('ppdi-frontend/images/angkatberat1.mp4')}}" class="card-img-top" alt="">
-          </div>
+        <!-- Pagination -->
+        <div class="mt-5">
+          <nav>
+              <ul class="pagination">
+                  <li class="page-item">
+                      {{ $items->links('pagination::bootstrap-4') }}
+                  </li>
+              </ul>
+          </nav>
         </div>
       </div>
     </section>
