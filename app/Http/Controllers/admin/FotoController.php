@@ -38,7 +38,7 @@ class FotoController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'foto' => 'required|mimes:jpg,png,svg|max:2048'
+            'foto' => 'required|mimes:jpg,jpeg,png,svg|max:2048'
         ]);
 
         $data['foto'] = $request->file('foto')->store('assets/foto', 'public');
@@ -81,7 +81,7 @@ class FotoController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->validate([
-            'foto' => 'required|mimes:jpg,png,svg|max:2048'
+            'foto' => 'required|mimes:jpg,jpeg,png,svg|max:2048'
         ]);
         $data['foto'] = $request->file('foto')->store('assets/foto', 'public');
 
