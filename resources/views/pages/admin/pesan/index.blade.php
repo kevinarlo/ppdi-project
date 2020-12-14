@@ -27,18 +27,31 @@
                                     </thead>
                                     
                                     <tbody>
+                                        @forelse ($items as $item)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Jakon</td>
-                                            <td>087876087467</td>
-                                            <td>rizkyfatih007@gmail.com</td>
-                                            <td>Test</td>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->nama }}</td>
+                                            <td>{{ $item->nomer }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->pesan }}</td>
                                             <td>
+                                                <form action="{{ route('pesan.destroy', $item->id) }}" method="POST"
+                                                class="d-inline">
+                                                @csrf
+                                                @method('delete')
                                                 <button class="btn btn-danger">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
+                                                </form>
                                             </td>
                                         </tr>
+                                        @empty
+                                        <tr>
+                                            <td colspan="7" class="text-center">
+                                                Data Kosong
+                                            </td>
+                                        </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>

@@ -38,6 +38,8 @@ Route::get('/blog', 'BlogController@index')
 
 Route::get('/contact', 'ContactController@index')
 ->name('contact');
+Route::post('/contact', 'ContactController@create')
+->name('contact-create');
 
 // Backend
 Route::prefix('admin')
@@ -51,8 +53,7 @@ Route::prefix('admin')
             Route::resource('video', VideoController::class);
             Route::get('/databerita', 'BeritaController@index')
                 ->name('databerita');
-            Route::get('/datapesan', 'PesanController@index')
-                ->name('datapesan');
+            Route::resource('pesan', PesanController::class);
         });
 
 
