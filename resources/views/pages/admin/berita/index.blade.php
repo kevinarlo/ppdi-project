@@ -8,7 +8,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Data Berita</h1>
-                        <a href="#" class="btn btn-sm btn-primary shadow-sm">
+                        <a href="{{ route('berita.create') }}" class="btn btn-sm btn-primary shadow-sm">
                         <i class="fas fa-plus fa-sm text-white-50"></i>
                         Tambah Berita
                         </a>
@@ -30,23 +30,35 @@
                                     </thead>
                                     
                                     <tbody>
+                                        @forelse ($items as $item)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Test</td>
-                                            <td>Test</td>
+                                            <td>{{ $item->post_id }}</td>
+                                            <td>{{ $item->title }}</td>
+                                            <td>{!! Str::limit($item->body, 60, '') !!}</td>
                                             <td>
-                                                <img src="{{url('ppdi-frontend/images/img_2.jpg')}}" style="width:150px" class="img-fluid"></a>
+                                                <img src="{{ Storage::url($item->photo) }}" style="width:150px" class="img-thumbnail">
                                             </td>
                                             <td>
-                                                <button class="btn btn-info">
+                                                <a href="{{ route('berita.edit', $item->post_id) }}" class="btn btn-info">
                                                     <i class="fa fa-pencil-alt"></i>
-                                                </button>
-
-                                                <button class="btn btn-danger">
-                                                    <i class="fa fa-trash"></i>
-                                                </button>
+                                                </a>
+                                                <form action="{{ route('berita.destroy', $item->post_id) }}" method="POST"
+                                                    class="d-inline">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button class="btn btn-danger">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
+                                        @empty
+                                        <tr>
+                                            <td colspan="7" class="text-center">
+                                                Data Kosong
+                                            </td>
+                                        </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>

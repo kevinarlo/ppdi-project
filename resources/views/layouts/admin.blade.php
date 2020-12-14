@@ -70,6 +70,7 @@
     </div>
 
     @include('includes.admin.script')
+    @stack('after-script')
 
 </body>
 

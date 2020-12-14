@@ -23,7 +23,6 @@
 
     <section class="section blog">
       <div class="container">
-
         <div class="row justify-content-center mb-5 element-animate">
           <div class="col-md-8 text-center">
             <h2 class=" heading mb-4">Berita Terkini</h2>
@@ -31,94 +30,28 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6">
-
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="project-single.html" class="mr-5"><img src="{{('ppdi-frontend/images/img_1.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h3 class="mt-2 text-black"><a href="project-single.html">Separated they live in Bookmarksgrove right</a></h3>
-                <p><a href="project-single.html" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="#" class="mr-5"><img src="{{('ppdi-frontend/images/img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h3 class="mt-2 text-black"><a href="#">Separated they live in Bookmarksgrove right</a></h3>
-                <p><a href="#" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-
-
-          </div>
+          @foreach ($items as $item)
           <div class="col-md-6">
             <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="#" class="mr-5"><img src="{{('ppdi-frontend/images/img_2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
+              <a href="{{ route('artikel', $item->slug) }}" class="mr-5"><img src="{{ Storage::url($item->photo) }}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
               <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h3 class="mt-2 text-black"><a href="#">Separated they live in Bookmarksgrove right</a></h3>
-                <p><a href="#" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
+                <span class="post-meta">{{ $item->created_at->isoFormat('D MMMM Y') }}</span>
+                <h3 class="mt-2 text-black"><a href="{{ route('artikel', $item->slug) }}">{{ $item->title }}</a></h3>
+                <p><a href="{{ route('artikel', $item->slug) }}" class="readmore">Read More<span class="ion-android-arrow-dropright-circle"></span></a></p>
               </div>
             </div>
-
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="#" class="mr-5"><img src="{{('ppdi-frontend/images/img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h3 class="mt-2 text-black"><a href="#">Separated they live in Bookmarksgrove right</a></h3>
-                <p><a href="#" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-
           </div>
-
-
-
-          <div class="col-md-6">
-
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="#" class="mr-5"><img src="{{('ppdi-frontend/images/img_2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h3 class="mt-2 text-black"><a href="#">Separated they live in Bookmarksgrove right</a></h3>
-                <p><a href="#" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="#" class="mr-5"><img src="{{('ppdi-frontend/images/img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h3 class="mt-2 text-black"><a href="#">Separated they live in Bookmarksgrove right</a></h3>
-                <p><a href="#" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-md-6">
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="#" class="mr-5"><img src="{{('ppdi-frontend/images/img_2.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h3 class="mt-2 text-black"><a href="#">Separated they live in Bookmarksgrove right</a></h3>
-                <p><a href="#" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-
-            <div class="media mb-4 d-md-flex d-block element-animate">
-              <a href="#" class="mr-5"><img src="{{('ppdi-frontend/images/img_3.jpg')}}" alt="Free website template by Free-Template.co" class="img-fluid"></a>
-              <div class="media-body">
-                <span class="post-meta">Feb 26th, 2018</span>
-                <h3 class="mt-2 text-black"><a href="#">Separated they live in Bookmarksgrove right</a></h3>
-                <p><a href="#" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-              </div>
-            </div>
-
-          </div>
-
+          @endforeach
+        </div>
+        <!-- Pagination -->
+        <div class="mt-5">
+          <nav>
+              <ul class="pagination">
+                  <li class="page-item">
+                      {{ $items->links('pagination::bootstrap-4') }}
+                  </li>
+              </ul>
+          </nav>
         </div>
       </div>
     </section>

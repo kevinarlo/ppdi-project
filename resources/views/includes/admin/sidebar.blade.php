@@ -30,7 +30,7 @@
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('databerita') }}">
+    <a class="nav-link" href="{{ route('berita.index') }}">
         <i class="fas fa-fw fa-newspaper"></i>
         <span>Berita</span>
     </a>

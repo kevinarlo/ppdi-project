@@ -35,6 +35,8 @@ Route::get('/video', 'VideoController@index')
 
 Route::get('/blog', 'BlogController@index')
 ->name('blog');
+Route::get('/artikel/{slug}', 'ArtikelController@index')
+                    ->name('artikel');
 
 Route::get('/contact', 'ContactController@index')
 ->name('contact');
@@ -51,8 +53,7 @@ Route::prefix('admin')
 
             Route::resource('foto', FotoController::class);
             Route::resource('video', VideoController::class);
-            Route::get('/databerita', 'BeritaController@index')
-                ->name('databerita');
+            Route::resource('berita', BeritaController::class);
             Route::resource('pesan', PesanController::class);
         });
 
