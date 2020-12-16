@@ -34,8 +34,8 @@
       <div class="container">
         <div class="row text-center text-lg-left">
           @foreach ($items as $gallery)
-          <div class="col-lg-3 col-md-4 col-6">
-            <a href="{{ Storage::url($gallery->foto) }}" class="link-thumbnail">
+          <div class="col-lg-3 col-md-4 col-6 mb-4">
+            <a href="{{ Storage::url($gallery->foto) }}" data-fancybox class="link-thumbnail">
               <span class="ion-eye icon"></span>
               <img src="{{ Storage::url($gallery->foto) }}" class="card-img-top" alt="">
             </a>
