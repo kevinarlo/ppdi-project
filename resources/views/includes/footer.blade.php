@@ -33,6 +33,7 @@
                 <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
                 <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
               </ul>
+              <div id="google_translate_element2"></div>
           </div>
         </div>
 
