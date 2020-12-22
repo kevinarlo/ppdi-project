@@ -23,6 +23,8 @@
 
     @yield('content')
 
+    @include('includes.livechat')
+
     @include('includes.footer')
 
 
